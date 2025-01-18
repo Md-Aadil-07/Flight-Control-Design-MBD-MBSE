@@ -1,0 +1,5 @@
+1. Connect MPU6050 (IMU sensor) to a microcontroller.
+2. Read the data from the sensor.
+3. Create pitch & roll motion in real-time.
+4. Store the data as csv.
+5. Infer and Plot the motion using arctan method.
