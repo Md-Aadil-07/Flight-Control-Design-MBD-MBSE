@@ -1,0 +1,62 @@
+flowchart TD
+    A["Flight Dynamics<br/>• Forces & Moments<br/>• Equations of Motion"] --> B["Linearization<br/>• Small Perturbations<br/>• Trim Conditions"]
+    
+    B --> C["State Space Model<br/>ẋ = Ax + Bu<br/>y = Cx + Du"]
+    
+    C --> D["System Analysis<br/>• Stability<br/>• Controllability<br/>• Observability"]
+    
+    D --> E{System OK?}
+    
+    E -->|No| F["Model Revision<br/>• Add States<br/>• Change Linearization"]
+    F --> C
+    
+    E -->|Yes| G["Select Design Method"]
+    
+    G --> H["Classical Control<br/>• Root Locus<br/>• Frequency Domain<br/>• PID"]
+    
+    G --> I["Modern Control<br/>• State Feedback<br/>• LQR<br/>• Pole Placement"]
+    
+    G --> J["Robust Control<br/>• H∞<br/>• μ-Synthesis<br/>• Adaptive"]
+    
+    H --> K["Design Controller<br/>• Calculate Gains<br/>• Compensation"]
+    
+    I --> L["Design Controller<br/>• Feedback Gains<br/>• Observer Design"]
+    
+    J --> M["Design Controller<br/>• Robust Synthesis<br/>• Uncertainty Handling"]
+    
+    K --> N["Linear Simulation<br/>• Performance Check<br/>• Stability Analysis"]
+    L --> N
+    M --> N
+    
+    N --> O{Performance OK?}
+    
+    O -->|No| P["Tune Controller<br/>• Adjust Parameters<br/>• Modify Design"]
+    P --> G
+    
+    O -->|Yes| Q["Nonlinear Validation<br/>• Full Aircraft Model<br/>• Large Signals"]
+    
+    Q --> R{Nonlinear OK?}
+    
+    R -->|No| S["Gain Scheduling<br/>• Multiple Points<br/>• Parameter Variation"]
+    S --> T["Multi-Point Design<br/>• Envelope Coverage"]
+    T --> Q
+    
+    R -->|Yes| U["Implementation<br/>• Digital Controller<br/>• Real-time Code"]
+    
+    U --> V["Hardware-in-Loop<br/>• Real-time Test<br/>• Actuator Dynamics"]
+    
+    V --> W{HIL OK?}
+    
+    W -->|No| X["Refinement<br/>• Anti-windup<br/>• Filtering"]
+    X --> U
+    
+    W -->|Yes| Y["Flight Test<br/>• Progressive Envelope<br/>• Safety Monitoring"]
+    
+    Y --> Z["Final Controller<br/>• Certified Design<br/>• Production Ready"]
+    
+    style A fill:#e3f2fd
+    style Z fill:#e8f5e8
+    style E fill:#fff3e0
+    style O fill:#fff3e0
+    style R fill:#fff3e0
+    style W fill:#fff3e0
